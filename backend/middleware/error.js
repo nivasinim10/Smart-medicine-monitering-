@@ -1,0 +1,1 @@
+module.exports=(e,req,res,next)=>{console.error(e);if(e.code===11000)return res.status(409).json({success:false,message:'Duplicate record'});res.status(e.statusCode||500).json({success:false,message:e.message||'Internal server error'})};

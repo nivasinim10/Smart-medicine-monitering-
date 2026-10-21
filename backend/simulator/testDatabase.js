@@ -1,0 +1,1 @@
+require('dotenv').config();const {connectDatabase,closeDatabase}=require('../config/database');(async()=>{try{await connectDatabase();console.log('MongoDB ping successful')}catch(e){console.error('Database test failed:',e.message);process.exitCode=1}finally{await closeDatabase()}})();
