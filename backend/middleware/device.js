@@ -1,0 +1,2 @@
+const {getDatabase}=require('../config/database');const {hashKey}=require('../utils/core');
+module.exports=async(req,res,next)=>{try{const k=req.headers['x-device-key'];if(!k)return res.status(401).json({success:false,message:'X-Device-Key required'});const d=await getDatabase().collection('devices').findOne({deviceKeyHash:hashKey(k),enabled:true});if(!d)return res.status(401).json({success:false,message:'Invalid device key'});req.device=d;next()}catch(e){next(e)}};
