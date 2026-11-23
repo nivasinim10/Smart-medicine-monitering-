@@ -42,3 +42,143 @@ html[data-theme="dark"] .auth-switch button,html[data-theme="dark"] .text-button
 html[data-theme="dark"] .theme-toggle:hover{background:#302b50;color:#d4cbff}
 .auth-theme-toggle{position:absolute;top:24px;right:28px;z-index:3;background:#f2f0ff}
 html[data-theme="dark"] .auth-theme-toggle{background:#2d3a51}
+
+
+/* Dose acknowledgement: prominent, separated from dosage/time metadata. */
+.slot-dose-details{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:10px 0 15px;min-height:20px}
+.slot-dosage{font-size:12px;font-weight:700;color:#52617a;background:#f0f2fa;border-radius:7px;padding:5px 8px}
+.slot-time{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#596780;background:#fff;border:1px solid #e7eaf2;border-radius:7px;padding:5px 8px}
+.taken-action{width:100%;min-height:46px;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:13px;padding:12px 16px;border:1px solid #3ca77c;border-radius:10px;background:linear-gradient(135deg,#20a879,#16865f);color:#fff;font-size:13px;font-weight:850;letter-spacing:.35px;box-shadow:0 4px 12px rgba(27,153,107,.19);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.taken-action:hover{background:linear-gradient(135deg,#168f68,#11734f);box-shadow:0 6px 16px rgba(27,153,107,.27);transform:translateY(-1px)}
+.taken-action:focus-visible{outline:3px solid rgba(32,168,121,.28);outline-offset:3px}
+.taken-action:active{transform:translateY(0)}
+.slot .status.taken{font-size:10px;padding:7px 9px}
+
+
+/* ===============================================================
+   SMARTMED MEDICAL BLUE | 2026 visual refresh
+   Presentation-only overrides: no API, auth or workflow changes.
+   =============================================================== */
+:root{--med-blue:#2563eb;--med-blue-dark:#1d4ed8;--med-ink:#14253f;--med-muted:#667995;--med-border:#e1eaf5;--med-soft:#edf5ff;--med-canvas:#f5f8fd;--med-shadow:0 8px 30px rgba(27,70,130,.055);color:var(--med-ink);background:var(--med-canvas)}
+body{background:var(--med-canvas);color:var(--med-ink)}
+button,input,select,textarea{font-family:'DM Sans',sans-serif}
+button{transition:background .18s,border-color .18s,transform .18s,box-shadow .18s}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.sidebar{width:264px;padding:26px 16px;background:#fff;border-right:1px solid var(--med-border);box-shadow:3px 0 22px rgba(25,75,130,.025)}
+.brand{font-size:24px;letter-spacing:-1.1px;padding:0 10px 38px;color:var(--med-ink)}
+.brand-icon{background:linear-gradient(145deg,#1d4ed8,#3b82f6);border-radius:14px;box-shadow:0 7px 16px #2563eb25}
+.brand small{color:#7f93ad;letter-spacing:1.35px}
+.accent{color:var(--med-blue)}
+.nav-title{color:#93a3b7;font-size:10px}
+.nav-item{border:1px solid transparent;color:#61748f;border-radius:11px;font-size:13px;padding:12px 14px}
+.nav-item:hover{background:#f3f8ff;color:var(--med-blue)}
+.nav-item.active{background:#eaf2ff;border-color:#d9e8ff;color:#1d4ed8;font-weight:800;box-shadow:inset 3px 0 0 #2563eb}
+.nav-item.active svg{stroke-width:2.5}
+.security{background:#effaf6;color:#28745e;border:1px solid #dcefe7;border-radius:12px}
+.topbar{height:78px;background:#ffffffec;border-color:var(--med-border);padding:0 38px;backdrop-filter:blur(12px)}
+.breadcrumb{color:#8a9ab0}.breadcrumb b{color:#233f61}
+.avatar{background:#e4efff;color:#1d4ed8;border:1px solid #d3e5ff}
+.content{max-width:1480px;padding:37px 38px 55px}
+.page-head{margin-bottom:28px;align-items:flex-end}
+.eyebrow{color:#2563eb;letter-spacing:1.65px;font-size:10px}
+h1,h2,h3{color:#142a47}h1{font-size:clamp(24px,2.3vw,33px);letter-spacing:-1.15px}h2{letter-spacing:-.55px}
+.page-head p,.panel-head p{color:#8393a8;line-height:1.55}
+.patient-select{border-color:#d8e4f2;box-shadow:0 3px 12px #1e4e8208}
+.stats{gap:17px;margin-bottom:22px}
+.stat,.panel{border:1px solid var(--med-border);border-radius:17px;background:#fff;box-shadow:var(--med-shadow)}
+.stat{padding:23px 23px 25px;position:relative;overflow:hidden;min-height:160px}
+.stat:before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#93c5fd);opacity:.8}
+.stat-icon{height:45px;width:45px;border-radius:13px;margin-bottom:17px}
+.stat-icon.purple,.purple{background:#e9f1ff;color:#2563eb}
+.stat-icon.blue,.blue{background:#e8f6ff;color:#0284c7}
+.stat-icon.green,.green{background:#e7f8ef;color:#15966a}
+.stat-icon.orange,.orange{background:#fff4e7;color:#d97706}
+.stat p{font-size:12px;color:#7588a1}.stat h2{font-size:29px;color:#17365d}
+.section-grid{gap:20px}.panel{padding:24px;margin-bottom:20px}.panel-head{margin-bottom:22px}
+.tag{background:#eaf2ff;color:#2563eb;border-radius:8px;letter-spacing:.6px}
+.slot-grid{gap:13px}.slot{background:#f8fbff;border:1px solid #e4edf9;border-radius:14px;padding:17px;min-height:180px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.slot:hover,.person-card:hover,.device-card:hover{border-color:#bcd6ff;box-shadow:0 8px 20px #2563eb0c;transform:translateY(-1px)}
+.slot h3{color:#17365d}.slot strong{color:#344f70}.slot small{color:#7c90a8}
+.status{border-radius:7px;font-size:10px;letter-spacing:.2px}.taken{background:#e4f8ee;color:#12845a}.missed{background:#ffebec;color:#c6404c}.pending{background:#fff4e2;color:#aa7115}
+.activity,.notification{border-color:#edf2f9}.activity-icon{background:#eaf2ff;color:#2563eb}.activity b{color:#1c395d}
+.primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:10px;padding:12px 18px;font-size:12px;box-shadow:0 5px 12px #2563eb22}
+.primary:hover{background:linear-gradient(135deg,#1d4ed8,#1e40af);box-shadow:0 8px 18px #2563eb30;transform:translateY(-1px)}
+.outline{border:1px solid #d6e3f4;color:#355a86;border-radius:10px;background:#fff}.outline:hover{border-color:#a6c7fa;background:#f3f8ff;color:#1d4ed8}
+.person-card,.device-card{background:linear-gradient(180deg,#fff,#fcfdff);border-color:#e1eaf5;border-radius:15px;transition:.2s}
+.person-icon,.device-icon{background:#eaf2ff;color:#2563eb;border-radius:13px}
+.table-wrap{border-radius:12px}th{background:#f4f8fe;color:#68819e}td{border-color:#eaf0f8;color:#60758f}td b{color:#213d60}tbody tr:hover{background:#1249b9}
+.chip{background:#edf4ff;color:#315f9c}.empty{color:#7e91a8}.empty svg{color:#94bff9}
+.notice{border-radius:11px}.loading{color:#2563eb}
+.overlay{background:rgba(15,36,69,.56);backdrop-filter:blur(3px)}.modal{border:1px solid #e2ebf8;border-radius:20px;box-shadow:0 28px 85px #153a6438}
+.form label{color:#3a5474}.form input,.form select{border-color:#d8e4f2;border-radius:10px;background:#fcfdff;min-height:44px}
+.form input:focus,.form select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px #dbeafe}
+.auth-page{background:#f7faff;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.auth-left{background:radial-gradient(circle at 82% 24%,#60a5fa60 0,transparent 38%),linear-gradient(150deg,#0e3777,#1d4ed8 60%,#2563eb);padding:46px 11%;position:relative;overflow:hidden}
+.auth-left:after{content:'';position:absolute;right:-105px;bottom:4%;width:310px;height:310px;border:1px solid #ffffff27;border-radius:50%;box-shadow:0 0 0 60px #ffffff09,0 0 0 120px #ffffff06;pointer-events:none}
+.auth-brand{position:relative;z-index:1;letter-spacing:-.8px}.auth-hero{position:relative;z-index:1}
+.auth-pill{background:#ffffff1c;border-color:#ffffff44;letter-spacing:1.3px}
+.auth-hero h1{letter-spacing:-2.7px;line-height:1.13}.auth-hero h1 em{color:#b7d8ff}.auth-hero>p{color:#dbeafe;line-height:1.75}
+.auth-feature{color:#e8f3ff}.auth-copyright{color:#c6dcff;position:relative;z-index:1}
+.auth-right{background:radial-gradient(circle at 90% 0,#e8f2ff 0,transparent 45%),#f8fbff;padding:45px}
+.auth-card{background:#fff;border:1px solid #e2ebf7;border-radius:22px;padding:clamp(24px,3.5vw,45px);box-shadow:0 22px 70px #244e8114;width:min(100%,480px)}
+.auth-card h2{color:#18375c;font-size:28px}.auth-card>p{color:#7d8fa8;line-height:1.65}.auth-mini{margin-bottom:23px}
+.auth-switch button,.text-button{color:#2563eb}.auth-note{border-color:#e4ecf7;color:#8495aa}
+.auth-submit{font-size:13px;min-height:48px}
+.portal-switch{background:#eff5ff;border:1px solid #dfebff;border-radius:12px;padding:5px;gap:5px}
+.portal-switch button{border-radius:9px;color:#5c7598}.portal-switch button.selected{background:#fff;color:#1d4ed8;box-shadow:0 2px 10px #2b63aa15}
+.password-page{background:linear-gradient(135deg,#edf5ff,#f8fbff)}
+.password-card{border:1px solid #e0eaf8;box-shadow:0 18px 55px #204a8012;border-radius:20px}
+.theme-toggle:hover{background:#eaf2ff;color:#2563eb}.auth-theme-toggle{background:#eaf2ff;color:#2563eb}
+.slot-dosage{background:#eaf2ff;color:#325e91}.slot-time{border-color:#dce9f8;color:#476c97}
+.taken-action{background:linear-gradient(135deg,#15996f,#087d60);border-color:#15996f}
+@media(max-width:1150px){.content{padding:30px 24px}.topbar{padding:0 24px}}
+@media(max-width:900px){.auth-page{grid-template-columns:1fr}.auth-left{min-height:290px;padding:30px 7%}.auth-hero{margin:28px 0 0}.auth-hero h1{font-size:38px;margin:14px 0}.auth-hero>p{margin-bottom:14px}.auth-feature,.auth-copyright{display:none}.auth-right{padding:28px 18px}.auth-card{padding:28px;max-width:530px}}
+@media(max-width:720px){.sidebar{width:min(82vw,280px)}.content{padding:23px 15px 45px}.topbar{height:66px;padding:0 15px}.page-head{align-items:flex-start;gap:14px;flex-wrap:wrap}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{min-height:142px;padding:16px}.stat h2{font-size:25px}.stat-icon{width:39px;height:39px;margin-bottom:12px}.panel{padding:17px;border-radius:14px}.slot-grid{grid-template-columns:1fr}.slot{min-height:0}.cards{grid-template-columns:1fr}.auth-left{min-height:250px}.auth-hero h1{font-size:33px}.auth-card{padding:24px 20px}.modal{padding:20px}.user-label{display:none}}
+@media(max-width:380px){.stats{grid-template-columns:1fr 1fr}.stat{padding:13px}.stat h2{font-size:22px}.stat p{font-size:11px}}
+/* Retain dark-mode behavior while using the Medical Blue palette. */
+html[data-theme="dark"]{--med-ink:#e8f2ff;--med-muted:#a2b7d3;--med-border:#273f60;--med-canvas:#0b1525;--med-shadow:0 8px 25px #00000020;background:#0b1525;color:#e8f2ff}
+html[data-theme="dark"] body{background:#0b1525;color:#e8f2ff}
+html[data-theme="dark"] .sidebar,html[data-theme="dark"] .topbar,html[data-theme="dark"] .panel,html[data-theme="dark"] .stat,html[data-theme="dark"] .auth-card{background:#13243a;border-color:#2b4361}
+html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] h3,html[data-theme="dark"] .brand,html[data-theme="dark"] .stat h2,html[data-theme="dark"] .auth-card h2{color:#e9f3ff}
+html[data-theme="dark"] .nav-item.active{background:#1a3760;border-color:#284e83;color:#8ebdff;box-shadow:inset 3px 0 0 #60a5fa}
+html[data-theme="dark"] .nav-item:hover{background:#19304e;color:#a8ceff}
+html[data-theme="dark"] .slot,html[data-theme="dark"] .person-card,html[data-theme="dark"] .device-card{background:#172a43;border-color:#2a4262}
+html[data-theme="dark"] .auth-left{background:radial-gradient(circle at 82% 24%,#2563eb60 0,transparent 38%),linear-gradient(150deg,#091d3c,#133f8a 70%,#1d4ed8)}
+html[data-theme="dark"] .auth-right,html[data-theme="dark"] .password-page{background:#0b1525}
+html[data-theme="dark"] .portal-switch{background:#172c48;border-color:#304c71}
+html[data-theme="dark"] .portal-switch button.selected{background:#24446d;color:#dbeafe}
+html[data-theme="dark"] .form input,html[data-theme="dark"] .form select{background:#13243a;border-color:#37516e;color:#eaf2ff}
+html[data-theme="dark"] .tag,html[data-theme="dark"] .chip,html[data-theme="dark"] .slot-dosage{background:#1d3b63;color:#9ec8ff}
+html[data-theme="dark"] .stat-icon.purple,html[data-theme="dark"] .person-icon,html[data-theme="dark"] .device-icon,html[data-theme="dark"] .activity-icon{background:#1d3b63;color:#8ebdff}
+html[data-theme="dark"] .stat-icon.blue{background:#173b58;color:#7dd3fc}
+html[data-theme="dark"] .avatar{background:#21416b;color:#b8d7ff}
+html[data-theme="dark"] .theme-toggle:hover{background:#234268;color:#bfdbfe}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Caregiver-only undo action; retains existing Medical Blue styling */
+.undo-action{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid #bfdbfe;border-radius:10px;background:#eff6ff;color:#1d4ed8;padding:8px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;margin-top:8px}
+.undo-action:hover{background:#dbeafe}
+.undo-action:focus-visible{outline:3px solid #60a5fa;outline-offset:2px}
+html[data-theme="dark"] .undo-action{background:#1e3a5f;color:#bfdbfe;border-color:#416995}
+
+/* LIGHT MODE - subtle light blue hover */
+html:not([data-theme="dark"]) tbody tr:hover,
+html[data-theme="light"] tbody tr:hover {
+  background-color: #edf5ff !important;
+}
+
+html:not([data-theme="dark"]) tbody tr:hover td,
+html[data-theme="light"] tbody tr:hover td {
+  background-color: transparent !important;
+  color: #60758f !important;
+}
+
+/* DARK MODE - subtle dark blue hover */
+html[data-theme="dark"] tbody tr:hover {
+  background-color: #1c304b !important;
+}
+
+html[data-theme="dark"] tbody tr:hover td {
+  background-color: transparent !important;
+  color: #dce8f8 !important;
+}

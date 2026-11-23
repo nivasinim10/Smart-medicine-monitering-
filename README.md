@@ -29,3 +29,7 @@ Both processes run from one VS Code terminal. Stop them with Ctrl+C.
 
 ## Notes
 The backend requires a reachable MongoDB database and configured JWT secret; it will not start with placeholder settings. The UI and API have not been end-to-end tested against your database. For details on endpoints and embedded device simulation, read `backend/README.md`.
+
+
+## Updated build
+This archive preserves the original React/Vite frontend and Express/MongoDB backend structure. See `backend/README.md` and `backend/API_ROUTE_MAP.md` for the added stock, app acknowledgement, prescription, and ESP32 integration workflows. Create `backend/.env` from `backend/.env.example` before running.

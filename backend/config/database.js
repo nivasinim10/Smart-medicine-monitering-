@@ -72,6 +72,10 @@ async function indexes() {
   await db.collection('notifications').createIndex(
     { recipientUserId: 1, createdAt: -1 }
   );
+
+  await db.collection('prescriptions').createIndex(
+    { patientId: 1, createdAt: -1 }
+  );
 }
 
 function getDatabase() {
